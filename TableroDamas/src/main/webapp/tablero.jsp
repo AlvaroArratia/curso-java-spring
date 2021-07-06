@@ -8,12 +8,12 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<% 
-		int width = Integer.parseInt(request.getParameter("width"));
-		int height = Integer.parseInt(request.getParameter("height"));
+		<%
+		int width = request.getParameter("width") != null ? Integer.parseInt(request.getParameter("width")) : 0;
+		int height = request.getParameter("height") != null ? Integer.parseInt(request.getParameter("height")) : 0;
 		String color = "";
 		%>
-		<h1>Tablero de damas: <%= width %>w X <%= height %>h</h1>
+		<h1>Tablero de damas: <%= width %> ancho X <%= height %> alto</h1>
 		<div id="tablero">
 			<% for(int i = 0; i < height; i++) { %>
 				<div class="row">
